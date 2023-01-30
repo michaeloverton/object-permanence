@@ -101,6 +101,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if(Vector3.Magnitude(GetComponent<CharacterController>().velocity) > 0)
+            {
+                Manager.Instance.PlayerIsMoving(true);
+            }
+            else
+            {
+                Manager.Instance.PlayerIsMoving(false);
+            }
         }
 
 
