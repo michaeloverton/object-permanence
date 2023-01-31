@@ -12,8 +12,10 @@ public class Timer : MonoBehaviour
     public delegate void ScreenEvent(int index);
     public event ScreenEvent OnScreenEvent;
     int screenEventIndex = 0;
+    [SerializeField] bool playScreenEvents = true;
     [SerializeField] float screenOneTime = 2f;
     [SerializeField] float screenTwoTime = 10f;
+    
 
     // Timer vars.
     float totalTimer = 0f;
@@ -53,15 +55,18 @@ public class Timer : MonoBehaviour
         timeUsedRatio = 1 - (timeLeft/maxTime);
 
         // Screen event calculations.
-        if(totalTimer > screenOneTime && screenEventIndex == 0)
+        if(playScreenEvents)
         {
-            if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
-            screenEventIndex++;
-        }
-        if(totalTimer > screenTwoTime && screenEventIndex == 1)
-        {
-            if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
-            screenEventIndex++;
+            if(totalTimer > screenOneTime && screenEventIndex == 0)
+            {
+                if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
+                screenEventIndex++;
+            }
+            if(totalTimer > screenTwoTime && screenEventIndex == 1)
+            {
+                if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
+                screenEventIndex++;
+            }
         }
     }
 
