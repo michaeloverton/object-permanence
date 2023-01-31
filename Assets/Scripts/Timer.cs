@@ -5,9 +5,17 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public static Timer Instance { get; private set; }
+    
+    // Events.
     public delegate void TickEvent(float val);
     public event TickEvent OnTicked;
+    public delegate void ScreenEvent(int index);
+    public event ScreenEvent OnScreenEvent;
+    int screenEventIndex = 0;
+    [SerializeField] float screenOneTime = 2f;
+    [SerializeField] float screenTwoTime = 10f;
 
+    // Timer vars.
     float totalTimer = 0f;
     float tickTimer = 0f;
     [SerializeField] float tickRate = 1f;
@@ -43,6 +51,18 @@ public class Timer : MonoBehaviour
         // Time remaining calculations.
         timeLeft -= Time.deltaTime;
         timeUsedRatio = 1 - (timeLeft/maxTime);
+
+        // Screen event calculations.
+        if(totalTimer > screenOneTime && screenEventIndex == 0)
+        {
+            if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
+            screenEventIndex++;
+        }
+        if(totalTimer > screenTwoTime && screenEventIndex == 1)
+        {
+            if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
+            screenEventIndex++;
+        }
     }
 
     public float GetMaxTime()
