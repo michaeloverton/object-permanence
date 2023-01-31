@@ -2853,6 +2853,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1586109005434609779, guid: 7cc8218f170d6bd41b844da72cffba75, type: 3}
+      propertyPath: antialiasingMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1586109006056960906, guid: 7cc8218f170d6bd41b844da72cffba75, type: 3}
       propertyPath: m_Name
       value: FPSController
