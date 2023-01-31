@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class Timer : MonoBehaviour
     [SerializeField] float screenOneTime = 2f;
     [SerializeField] float screenTwoTime = 10f;
     
-
     // Timer vars.
     float totalTimer = 0f;
     float tickTimer = 0f;
@@ -53,6 +53,11 @@ public class Timer : MonoBehaviour
         // Time remaining calculations.
         timeLeft -= Time.deltaTime;
         timeUsedRatio = 1 - (timeLeft/maxTime);
+
+        if(timeUsedRatio > 1f) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
+        }
 
         // Screen event calculations.
         if(playScreenEvents)
