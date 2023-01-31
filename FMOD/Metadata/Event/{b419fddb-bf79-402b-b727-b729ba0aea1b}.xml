@@ -31,9 +31,6 @@
 		<relationship name="timeline">
 			<destination>{a92db119-42cf-44f9-bb78-eb0423a9a067}</destination>
 		</relationship>
-		<relationship name="parameters">
-			<destination>{2aa0bfb1-b1b5-4d7a-869d-c6d461453b9b}</destination>
-		</relationship>
 		<relationship name="banks">
 			<destination>{dfbb5065-45b9-4582-9ab0-df9a72e42c39}</destination>
 		</relationship>
@@ -78,11 +75,6 @@
 		</relationship>
 		<relationship name="markers">
 			<destination>{cd60dc83-03ee-4638-b176-e6dc8bc896dc}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{2aa0bfb1-b1b5-4d7a-869d-c6d461453b9b}">
-		<relationship name="preset">
-			<destination>{c8d82479-8822-4e45-9812-e4198787f565}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{350a1145-78b0-4243-9a18-68f2bc2ac799}">
@@ -170,37 +162,6 @@
 	<object class="Automator" id="{6feb4a57-1468-4fe4-9301-8b0a8b0db107}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>gain</value>
-		</property>
-		<relationship name="automationCurves">
-			<destination>{d37085fb-e337-4182-bf4c-231f98c58362}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationCurve" id="{d37085fb-e337-4182-bf4c-231f98c58362}">
-		<relationship name="parameter">
-			<destination>{c8d82479-8822-4e45-9812-e4198787f565}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{c586ce5b-a436-4007-b07c-d982b8aadfc2}</destination>
-			<destination>{ab21d64e-e862-42ab-8d0c-9dbecb2ea42a}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationPoint" id="{c586ce5b-a436-4007-b07c-d982b8aadfc2}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>-80</value>
-		</property>
-		<property name="curveShape">
-			<value>-0.335758865</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{ab21d64e-e862-42ab-8d0c-9dbecb2ea42a}">
-		<property name="position">
-			<value>0.98728813559322037</value>
-		</property>
-		<property name="value">
-			<value>0</value>
 		</property>
 	</object>
 </objects>

@@ -12,10 +12,20 @@ public class Timer : MonoBehaviour
     float tickTimer = 0f;
     [SerializeField] float tickRate = 1f;
 
+    [SerializeField] float maxTime = 60f;
+    float timeLeft;
+    float timeUsedRatio;
+
     // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
+    }
+
+    void Start()
+    {
+        timeLeft = maxTime;
+        timeUsedRatio = 0;
     }
 
     // Update is called once per frame
@@ -25,10 +35,23 @@ public class Timer : MonoBehaviour
         tickTimer += Time.deltaTime;
 
         if(tickTimer > tickRate) {
-            Debug.Log("TICKED at " + totalTimer);
             tickTimer = 0;
 
             if(OnTicked != null) OnTicked(totalTimer);
         }
+
+        // Time remaining calculations.
+        timeLeft -= Time.deltaTime;
+        timeUsedRatio = 1 - (timeLeft/maxTime);
+    }
+
+    public float GetMaxTime()
+    {
+        return maxTime;
+    }
+
+    public float GetTimeUsedRatio()
+    {
+        return timeUsedRatio;
     }
 }

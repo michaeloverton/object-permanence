@@ -5,7 +5,7 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public static Manager Instance { get; private set; }
-    public delegate void PlayerMoveEvent(float val);
+    public delegate void PlayerMoveEvent(bool val);
     public event PlayerMoveEvent OnPlayerMoving;
 
     private bool playerIsMoving = false;
@@ -19,6 +19,8 @@ public class Manager : MonoBehaviour
     public void PlayerIsMoving(bool val)
     {
         playerIsMoving = val;
+
+        if(OnPlayerMoving != null) OnPlayerMoving(val);
     }
 
     public bool PlayerIsMoving()

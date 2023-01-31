@@ -5,23 +5,15 @@ using UnityEngine;
 public class PauseScreen : MonoBehaviour
 {
     [SerializeField] PauseManager pauseManager;
-    private Canvas pauseScreen;
+    [SerializeField] GameObject pauseScreen;
 
     void Start()
     {
-        pauseScreen = GetComponent<Canvas>();
         pauseManager.OnPausePressed += onPaused;
     }
 
     void onPaused(bool val)
     {
-        if(val)
-        {
-            pauseScreen.enabled = true;
-        }
-        else
-        {
-            pauseScreen.enabled = false;
-        }
+        pauseScreen.SetActive(val);
     }
 }

@@ -16,7 +16,6 @@ public class TickMover : MonoBehaviour
     {
         if(Random.Range(0f, 1.0f) < probability && Manager.Instance.PlayerIsMoving())
         {
-            Debug.Log("moving object");
             List<Transform> positions = Positions.Instance.GetPositions();
             transform.position = positions[Random.Range(0, positions.Count)].position;
         }
