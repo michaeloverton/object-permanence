@@ -12,7 +12,7 @@ public class ScreenEventListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer.Instance.OnScreenEvent += ShowScreen;
+        TimeManager.Instance.OnScreenEvent += ShowScreen;
     }
 
     void ShowScreen(int index)

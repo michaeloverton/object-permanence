@@ -12,7 +12,7 @@ public class TextTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = Timer.Instance.GetMaxTime();
+        currentTime = TimeManager.Instance.GetMaxTime();
         timerText = GetComponent<TextMeshProUGUI>();
         timerText.SetText(currentTime.ToString());
     }

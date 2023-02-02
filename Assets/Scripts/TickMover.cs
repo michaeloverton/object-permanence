@@ -10,13 +10,13 @@ public class TickMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer.Instance.OnTicked += MoveObject;
+        TimeManager.Instance.OnTicked += MoveObject;
         currentProbability = 0;
     }
 
     void Update()
     {
-        currentProbability = maxProbability * Mathf.Pow(Timer.Instance.GetTimeUsedRatio(), 2);
+        currentProbability = maxProbability * Mathf.Pow(TimeManager.Instance.GetTimeUsedRatio(), 2);
     }
 
     private void MoveObject(float time)

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class TimeManager : MonoBehaviour
 {
-    public static Timer Instance { get; private set; }
+    public static TimeManager Instance { get; private set; }
     
     // Events.
     public delegate void TickEvent(float val);

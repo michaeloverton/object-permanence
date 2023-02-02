@@ -16,7 +16,7 @@ public class VertexChaos : MonoBehaviour
 
     void Update() 
     {
-        mat.SetFloat("_MaxDistance", Mathf.Pow(Timer.Instance.GetTimeUsedRatio(), 2) * maxDistance);
+        mat.SetFloat("_MaxDistance", Mathf.Pow(TimeManager.Instance.GetTimeUsedRatio(), 2) * maxDistance);
     }
 
     void SetVertexChaos(bool val) {
