@@ -10,8 +10,9 @@ public class TickMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TimeManager.Instance.OnTicked += MoveObject;
         currentProbability = 0;
+
+        PositionManager.Instance.RegisterObject(this);
     }
 
     void Update()
@@ -19,12 +20,8 @@ public class TickMover : MonoBehaviour
         currentProbability = maxProbability * Mathf.Pow(TimeManager.Instance.GetTimeUsedRatio(), 2);
     }
 
-    private void MoveObject(float time)
+    public float GetProbability()
     {
-        if(Random.Range(0f, 1.0f) < currentProbability && Manager.Instance.PlayerIsMoving())
-        {
-            List<Transform> positions = Positions.Instance.GetPositions();
-            transform.position = positions[Random.Range(0, positions.Count)].position;
-        }
+        return currentProbability;
     }
 }

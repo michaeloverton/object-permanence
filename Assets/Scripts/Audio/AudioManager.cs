@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour
     
     public void FireOn()
     {
-        Debug.Log("FIRE ON");
         fireInstance.setParameterByName("fireVolume", 1);
     }
 

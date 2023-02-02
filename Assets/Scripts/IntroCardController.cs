@@ -8,15 +8,21 @@ public class IntroCardController : MonoBehaviour
     float currentTime = 0f;
     bool playingMusic = false;
 
+    void Start()
+    {
+        AudioManager.Instance.FireOn();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(!playingMusic)
-        {   
+        {
             currentTime += Time.deltaTime;
             if(currentTime > startMusicTime)
             {
                 Manager.Instance.FreezePlayer(false);
+                AudioManager.Instance.FireOff();
 
                 if(!MusicManager.Instance.IsPlaying())
                 {
