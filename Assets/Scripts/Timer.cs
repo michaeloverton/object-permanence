@@ -66,6 +66,7 @@ public class Timer : MonoBehaviour
             {
                 if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
                 screenEventIndex++;
+                Manager.Instance.FreezePlayer(true);
             }
             if(totalTimer > screenTwoTime && screenEventIndex == 1)
             {

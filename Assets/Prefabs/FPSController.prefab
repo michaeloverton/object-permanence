@@ -443,7 +443,6 @@ MonoBehaviour:
     BobAmount: 0.2
   m_StepInterval: 5
   playerAudio: {fileID: 1586109006712881657}
-  pauseManager: {fileID: 0}
 --- !u!54 &1586109006060015850
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -504,9 +503,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a534087476aae42a2054501bc73968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepEventName: footstep
-  jumpEventName: jump
-  landEventName: land
+  footstepEventName: Player/footstep
+  jumpEventName: Player/jump
+  landEventName: Player/land
 --- !u!1 &1806530406974229383
 GameObject:
   m_ObjectHideFlags: 0

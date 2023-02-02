@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d6abb125-d1e5-4822-9b0f-5bea506c7ef6}">
 		<property name="assetPath">
-			<value>quiet-traffic.wav</value>
+			<value>Ambience/quiet-traffic.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

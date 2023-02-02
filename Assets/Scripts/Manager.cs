@@ -7,8 +7,10 @@ public class Manager : MonoBehaviour
     public static Manager Instance { get; private set; }
     public delegate void PlayerMoveEvent(bool val);
     public event PlayerMoveEvent OnPlayerMoving;
-
     private bool playerIsMoving = false;
+
+    public delegate void PlayerFreezeEvent(bool val);
+    public event PlayerFreezeEvent OnFreezePlayer;
 
     // Start is called before the first frame update
     void Awake()
@@ -26,5 +28,10 @@ public class Manager : MonoBehaviour
     public bool PlayerIsMoving()
     {
         return playerIsMoving;
+    }
+
+    public void FreezePlayer(bool val)
+    {
+        if(OnFreezePlayer != null) OnFreezePlayer(val);
     }
 }

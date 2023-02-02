@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{10937f0f-032d-48f2-a121-21bf98dc8236}">
 		<property name="assetPath">
-			<value>button-ping.wav</value>
+			<value>UI/button-ping.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

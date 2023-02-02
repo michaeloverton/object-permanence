@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{1622d43d-439a-4535-9e4c-044e6f584797}">
 		<property name="assetPath">
-			<value>crowd-cafe.flac</value>
+			<value>Ambience/crowd-cafe.flac</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

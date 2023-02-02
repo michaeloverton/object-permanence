@@ -5,11 +5,18 @@ using System;
 
 public class PauseManager : MonoBehaviour
 {
+    public static PauseManager Instance { get; private set; }
+
     public delegate void PauseEvent(bool paused);
     public event PauseEvent OnPausePressed;
     private bool paused = false;
     public delegate void SensitivityChangeEvent(float val);
     public event SensitivityChangeEvent OnSensitivityChanged;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     // Update is called once per frame
     void Update()

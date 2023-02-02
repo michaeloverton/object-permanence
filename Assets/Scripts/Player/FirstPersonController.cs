@@ -28,9 +28,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         [SerializeField] private AudioPlayer playerAudio;
 
-        // PauseManager
-        [SerializeField] PauseManager pauseManager;
+        // Pause and freeze
         private bool paused = false;
+        private bool frozen = true;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -45,12 +45,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
 
-        private void Awake()
-        {
-            pauseManager.OnPausePressed += onPausePressed;
-            pauseManager.OnSensitivityChanged += onSensitivityChanged;
-        }
-
         // Use this for initialization
         private void Start()
         {
@@ -63,6 +57,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            PauseManager.Instance.OnPausePressed += onPausePressed;
+            PauseManager.Instance.OnSensitivityChanged += onSensitivityChanged;
+            Manager.Instance.OnFreezePlayer += onFreezePlayer;
+
+            m_MouseLook.SetCursorLock(true);
         }
 
         private void onPausePressed(bool val)
@@ -76,10 +76,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.YSensitivity = val;
         }
 
+        private void onFreezePlayer(bool val)
+        {
+            frozen = val;
+        }
+
         // Update is called once per frame
         private void Update()
         {
             if(paused) return;
+            if(frozen) return;
 
             RotateView();
             // the jump state needs to read here to make sure it is not missed
@@ -122,6 +128,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void FixedUpdate()
         {
             if(paused) return;
+            if(frozen) return;
 
             float speed;
             GetInput(out speed);
