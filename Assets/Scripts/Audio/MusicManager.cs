@@ -6,6 +6,7 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
     FMODUnity.StudioEventEmitter musicEmitter;
+    [SerializeField] bool playMusic;
     
 
     void Awake()
@@ -28,7 +29,10 @@ public class MusicManager : MonoBehaviour
 
     public void PlayMusic()
     {
-        musicEmitter.Play();
+        if(playMusic)
+        {
+            musicEmitter.Play();
+        }
     }
 
     public bool IsPlaying()
