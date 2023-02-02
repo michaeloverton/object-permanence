@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
     FMODUnity.StudioEventEmitter musicEmitter;
+    
 
     void Awake()
     {
-        Instance = this;
+        if(!Instance)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void Start()
@@ -23,8 +31,8 @@ public class MusicManager : MonoBehaviour
         musicEmitter.Play();
     }
 
-    // void PauseMusic()
-    // {
-    //     musicEmitter.set
-    // }
+    public bool IsPlaying()
+    {
+        return musicEmitter.IsPlaying();
+    }
 }

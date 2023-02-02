@@ -15,7 +15,15 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Instance = this;
+        if(!Instance)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void PlayerIsMoving(bool val)

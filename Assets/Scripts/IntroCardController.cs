@@ -16,9 +16,13 @@ public class IntroCardController : MonoBehaviour
             currentTime += Time.deltaTime;
             if(currentTime > startMusicTime)
             {
-                MusicManager.Instance.PlayMusic();
-                playingMusic = true;
                 Manager.Instance.FreezePlayer(false);
+
+                if(!MusicManager.Instance.IsPlaying())
+                {
+                    MusicManager.Instance.PlayMusic();
+                    playingMusic = true;
+                } 
             }
         }
         
