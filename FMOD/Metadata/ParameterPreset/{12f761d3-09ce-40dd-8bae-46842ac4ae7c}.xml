@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{12f761d3-09ce-40dd-8bae-46842ac4ae7c}">
+		<property name="name">
+			<value>chaosVolume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{161f619b-b7c6-4bf6-88b4-10d8e32706ba}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{567cbd09-deca-481d-af7b-a5af51e8d1d8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{567cbd09-deca-481d-af7b-a5af51e8d1d8}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

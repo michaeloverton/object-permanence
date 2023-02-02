@@ -18,20 +18,7 @@ public class PositionManager : MonoBehaviour
     void Start()
     {
         TimeManager.Instance.OnTicked += ShuffleObjects;
-
-        // Set initial positions.
-        // for(int i=0; i < objects.Count; i++)
-        // {
-        //     GameObject g = objects[i].gameObject;
-        //     Debug.Log(g.name);
-        //     g.transform.position = positions[i].position;
-        // }
     }
-
-    // public List<Transform> GetPositions()
-    // {
-    //     return positions;
-    // }
 
     // Registers the object and moves it into a designated position.
     public void RegisterObject(TickMover mover)

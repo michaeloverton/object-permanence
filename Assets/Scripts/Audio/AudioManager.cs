@@ -8,6 +8,10 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] FMODUnity.EventReference fireEvent;
     FMOD.Studio.EventInstance fireInstance;
+    [SerializeField] FMODUnity.EventReference backgroundEvent;
+    FMOD.Studio.EventInstance backgroundInstance;
+    [SerializeField] FMODUnity.StudioEventEmitter backgroundEmitter;
+    [SerializeField] [Range(0,1)] float initialBackgroundVolume;
 
     void Awake()
     {
@@ -20,21 +24,35 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        fireInstance = FMODUnity.RuntimeManager.CreateInstance(fireEvent);
+        fireInstance.start();
     }
 
     void Start()
     {
-        fireInstance = FMODUnity.RuntimeManager.CreateInstance(fireEvent);
-        fireInstance.start();
+        backgroundEmitter.Play();
+    }
+
+    void Update()
+    {
+        SetBackgroundVolume(TimeManager.Instance.GetTimeUsedRatio());
     }
     
     public void FireOn()
     {
+        Debug.Log("FIRE ON");
         fireInstance.setParameterByName("fireVolume", 1);
     }
 
     public void FireOff()
     {
         fireInstance.setParameterByName("fireVolume", 0);
+    }
+
+    public void SetBackgroundVolume(float val)
+    {
+        float vol = initialBackgroundVolume + val*(1 - initialBackgroundVolume);
+        backgroundEmitter.SetParameter("chaosVolume", vol);
     }
 }

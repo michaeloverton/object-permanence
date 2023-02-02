@@ -86,6 +86,6 @@ public class TimeManager : MonoBehaviour
 
     public float GetTimeUsedRatio()
     {
-        return timeUsedRatio;
+        return Mathf.Clamp01(timeUsedRatio);
     }
 }
