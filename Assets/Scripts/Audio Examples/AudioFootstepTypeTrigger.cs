@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioFootstepTypeTrigger : MonoBehaviour
 {
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private AudioManagerEXAMPLE audioManager;
     [SerializeField] private int footstepType;
 
     void OnTriggerEnter(Collider other)

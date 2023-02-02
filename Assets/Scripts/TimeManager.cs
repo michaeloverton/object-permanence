@@ -67,12 +67,14 @@ public class TimeManager : MonoBehaviour
                 if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
                 screenEventIndex++;
                 Manager.Instance.FreezePlayer(true);
+                AudioManager.Instance.FireOn();
             }
             if(totalTimer > screenTwoTime && screenEventIndex == 1)
             {
                 if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
                 screenEventIndex++;
                 Manager.Instance.FreezePlayer(true);
+                AudioManager.Instance.FireOn();
             }
         }
     }
