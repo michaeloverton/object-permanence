@@ -26,7 +26,8 @@ public class AudioManager : MonoBehaviour
         }
 
         fireInstance = FMODUnity.RuntimeManager.CreateInstance(fireEvent);
-        fireInstance.start();
+        // fireInstance.start();
+        // fireInstance.release();
     }
 
     void Start()
@@ -37,17 +38,20 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         SetBackgroundVolume(TimeManager.Instance.GetTimeUsedRatio());
+        FMODUnity.RuntimeManager.CoreSystem.update();
     }
     
     public void FireOn()
     {
         Debug.Log("FIRE ON");
-        fireInstance.setParameterByName("fireVolume", 1);
+        // fireInstance.setParameterByName("fireVolume", 1);
+        // fireInstance.start();
     }
 
     public void FireOff()
     {
-        fireInstance.setParameterByName("fireVolume", 0);
+        // fireInstance.setParameterByName("fireVolume", 0);
+        // fireInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     public void SetBackgroundVolume(float val)
