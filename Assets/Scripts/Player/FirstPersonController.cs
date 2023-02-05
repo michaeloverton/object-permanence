@@ -30,7 +30,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         // Pause and freeze
         private bool paused = false;
-        private bool frozen = true;
+        private bool frozen = false;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -60,7 +60,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             PauseManager.Instance.OnPausePressed += onPausePressed;
             PauseManager.Instance.OnSensitivityChanged += onSensitivityChanged;
-            Manager.Instance.OnFreezePlayer += onFreezePlayer;
 
             m_MouseLook.SetCursorLock(true);
         }
@@ -107,15 +106,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
-
-            if(Vector3.Magnitude(GetComponent<CharacterController>().velocity) > 0)
-            {
-                Manager.Instance.PlayerIsMoving(true);
-            }
-            else
-            {
-                Manager.Instance.PlayerIsMoving(false);
-            }
         }
 
 
