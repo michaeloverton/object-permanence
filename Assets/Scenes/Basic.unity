@@ -2037,8 +2037,8 @@ Transform:
   - {fileID: 1885015036}
   - {fileID: 2871223866373955677}
   - {fileID: 1220892616}
-  - {fileID: 2053456893}
   - {fileID: 6821262503301874331}
+  - {fileID: 2053456893}
   - {fileID: 621618731}
   m_Father: {fileID: 707745630}
   m_RootOrder: 1
@@ -10974,7 +10974,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -11084,7 +11084,7 @@ ParticleSystem:
     z:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -12172,7 +12172,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.33
       minScalar: 1
       maxCurve:
         serializedVersion: 2
