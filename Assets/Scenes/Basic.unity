@@ -4266,6 +4266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComfyChair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8321613956398840574, guid: e2633b6218ab6f04895ef09f0c952d86, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b98bca2f8b0e454dbe77d573b4c27c0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2633b6218ab6f04895ef09f0c952d86, type: 3}
 --- !u!4 &884975998 stripped
@@ -8567,6 +8571,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 72d92b54501b3994092bc002c0f9e2ff, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b98bca2f8b0e454dbe77d573b4c27c0, type: 2}
     - target: {fileID: 919132149155446097, guid: 72d92b54501b3994092bc002c0f9e2ff, type: 3}
       propertyPath: m_Name
       value: couch
@@ -10812,6 +10820,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8321613956398840574, guid: e2633b6218ab6f04895ef09f0c952d86, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b98bca2f8b0e454dbe77d573b4c27c0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2633b6218ab6f04895ef09f0c952d86, type: 3}
 --- !u!1001 &5114203355009022891
