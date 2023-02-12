@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TopoMenu.unity
-    guid: 943120c99e8e7f441a42b105edb5e121
+    path: Assets/Scenes/Title.unity
+    guid: 7110a4a5fb2626244914f4a5d16a8684
   - enabled: 1
-    path: Assets/Scenes/Topo.unity
-    guid: 13b64ce3a7acd014593d4bdb67841544
+    path: Assets/Scenes/Main.unity
+    guid: e4a7dff1f1dab2c4aa9c7bf9966004b1
   m_configObjects: {}
