@@ -5,7 +5,8 @@ using TMPro;
 
 public class ToyCollider : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI objectText;
+    [SerializeField] TextMeshProUGUI prefixText;
     [SerializeField] LayerMask toyLayer;
     [SerializeField] float rayDistance = 1.0f;
     [SerializeField] List<string> prefixes;
@@ -19,9 +20,8 @@ public class ToyCollider : MonoBehaviour
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hitInfo, rayDistance, toyLayer))
         {
             GameObject toyObject = hitInfo.collider.gameObject;
-            text.enabled = true;
-
-            // text.SetText("PICK UP " + toyObject.name);
+            objectText.enabled = true;
+            prefixText.enabled = true;
 
             if(elapsedTime > changeTextTime)
             {
@@ -29,7 +29,8 @@ public class ToyCollider : MonoBehaviour
                 elapsedTime = 0;
             }
 
-            text.SetText(prefixes[currentPrefixIndex] + " " + toyObject.name);
+            prefixText.SetText(prefixes[currentPrefixIndex]);
+            objectText.SetText(toyObject.name);
 
 
             if(Input.GetKey(KeyCode.F))
@@ -41,7 +42,8 @@ public class ToyCollider : MonoBehaviour
         }
         else
         {
-            text.enabled = false;
+            objectText.enabled = false;
+            prefixText.enabled = false;
             elapsedTime = 0;
         }
     }
