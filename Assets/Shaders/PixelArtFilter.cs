@@ -7,6 +7,8 @@ public class PixelArtFilter : MonoBehaviour {
 
     [Range(0, 8)]
     public int downSamples = 0;
+    public bool useTimedDownSampling = true;
+    public int maxDownSamples = 4;
 
     private Material pixelArtMat;
     
@@ -16,6 +18,8 @@ public class PixelArtFilter : MonoBehaviour {
     }
 
     void OnRenderImage(RenderTexture source, RenderTexture destination) {
+        if(useTimedDownSampling) downSamples = ((int)Utility.Remap(TimeManager.Instance.GetTimeUsedRatio(), 0, 1, 0, maxDownSamples));
+
         int width = source.width;
         int height = source.height;
 

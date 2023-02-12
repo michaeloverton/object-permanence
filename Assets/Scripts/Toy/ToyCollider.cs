@@ -10,9 +10,16 @@ public class ToyCollider : MonoBehaviour
     [SerializeField] LayerMask toyLayer;
     [SerializeField] float rayDistance = 1.0f;
     [SerializeField] List<string> prefixes;
-    [SerializeField] float changeTextTime = .1f;
+    [SerializeField] float baseTextTime = .1f;
+    [SerializeField] float timeIncrement = 0.01f;
+    float currentTextTime;
     float elapsedTime = 0;
     int currentPrefixIndex = 0;
+
+    void Start()
+    {
+        currentTextTime = baseTextTime;
+    }
 
     void Update()
     {
@@ -23,10 +30,15 @@ public class ToyCollider : MonoBehaviour
             objectText.enabled = true;
             prefixText.enabled = true;
 
-            if(elapsedTime > changeTextTime)
+            if(elapsedTime > currentTextTime)
             {
                 currentPrefixIndex = (currentPrefixIndex + 1) % prefixes.Count;
                 elapsedTime = 0;
+
+                if(currentTextTime > timeIncrement)
+                {
+                    currentTextTime -= timeIncrement;
+                }
             }
 
             prefixText.SetText(prefixes[currentPrefixIndex]);
@@ -45,6 +57,7 @@ public class ToyCollider : MonoBehaviour
             objectText.enabled = false;
             prefixText.enabled = false;
             elapsedTime = 0;
+            currentTextTime = baseTextTime;
         }
     }
 }

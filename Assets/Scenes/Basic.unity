@@ -3216,7 +3216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1586109006057123754, guid: 7cc8218f170d6bd41b844da72cffba75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.69
+      value: 9.72
       objectReference: {fileID: 0}
     - target: {fileID: 1586109006057123754, guid: 7cc8218f170d6bd41b844da72cffba75, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3536,7 +3536,8 @@ MonoBehaviour:
   - SAVE
   - REMEMBER
   - FORGET
-  changeTextTime: 0.08
+  baseTextTime: 0.3
+  timeIncrement: 0.02
 --- !u!1 &559364354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,7 +3774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7702571014004740346, guid: cfe24efcd54254742aa99ceec288c425, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.836
+      value: 4.557
       objectReference: {fileID: 0}
     - target: {fileID: 7702571014004740346, guid: cfe24efcd54254742aa99ceec288c425, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3781,7 +3782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7702571014004740346, guid: cfe24efcd54254742aa99ceec288c425, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.519
+      value: 1.611
       objectReference: {fileID: 0}
     - target: {fileID: 7702571014004740346, guid: cfe24efcd54254742aa99ceec288c425, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7057,7 +7058,7 @@ MonoBehaviour:
   screenOneTime: 7
   screenTwoTime: 12
   tickRate: 0.13
-  maxTime: 300
+  maxTime: 15
 --- !u!4 &1149763983
 Transform:
   m_ObjectHideFlags: 0
@@ -8969,6 +8970,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pixelArtFilter: {fileID: 4800000, guid: c15e6272cf1fe3b47a878462bcf89d93, type: 3}
   downSamples: 2
+  useTimedDownSampling: 1
+  maxDownSamples: 5
 --- !u!1 &1634658863
 GameObject:
   m_ObjectHideFlags: 0
