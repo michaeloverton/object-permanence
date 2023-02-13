@@ -26,6 +26,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] float maxTime = 60f;
     float timeLeft;
     float timeUsedRatio;
+    [SerializeField] GameObject endScreen;
+    [SerializeField] float endScreenTime = 3.0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -55,8 +57,8 @@ public class TimeManager : MonoBehaviour
         timeLeft -= Time.deltaTime;
         timeUsedRatio = 1 - (timeLeft/maxTime);
 
-        if(timeUsedRatio > 1f) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(timeUsedRatio >= 1f) {
+            StartCoroutine(ShowEndScreen());
             return;
         }
 
@@ -95,5 +97,13 @@ public class TimeManager : MonoBehaviour
     public float GetTimeUsedRatio()
     {
         return Mathf.Clamp01(timeUsedRatio);
+    }
+
+    IEnumerator ShowEndScreen()
+    {
+        endScreen.SetActive(true);
+
+        yield return new WaitForSeconds(endScreenTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

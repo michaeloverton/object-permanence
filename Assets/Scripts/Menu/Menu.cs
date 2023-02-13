@@ -54,12 +54,6 @@ public class Menu : MonoBehaviour
         blackEndPanel.SetActive(true);
         MusicManager.Instance.StopMusic();
         AudioManager.Instance.StopBackground();
-        // mainMusic.Stop();
-        // chaos.Stop();
-        // AudioManager am = GameObject.FindObjectOfType<AudioManager>();
-        // Destroy(am.gameObject);
-        // MusicManager mm = GameObject.FindObjectOfType<MusicManager>();
-        // Destroy(mm.gameObject);
 
         yield return new WaitForSeconds(blackEndTime);
 
@@ -71,5 +65,13 @@ public class Menu : MonoBehaviour
         Destroy(mm.gameObject);
 
         SceneManager.LoadScene("Title");
+    }
+
+    public void Quit()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
     }
 }
