@@ -6609,6 +6609,13 @@ MonoBehaviour:
     Path: event:/Ambience/chaos
   backgroundEmitter: {fileID: 1044229250}
   initialBackgroundVolume: 0.2
+  tinnitusEvent:
+    Guid:
+      Data1: 1996289602
+      Data2: 1267833561
+      Data3: -20733782
+      Data4: 2120797398
+    Path: event:/Ambience/tinnitus
 --- !u!1 &915788184
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.EventInstance backgroundInstance;
     [SerializeField] FMODUnity.StudioEventEmitter backgroundEmitter;
     [SerializeField] [Range(0,1)] float initialBackgroundVolume;
+    [SerializeField] FMODUnity.EventReference tinnitusEvent;
+    FMOD.Studio.EventInstance tinnitusInstance;
+    float tinMaxTime;
 
     void Awake()
     {
@@ -27,16 +30,20 @@ public class AudioManager : MonoBehaviour
 
         fireInstance = FMODUnity.RuntimeManager.CreateInstance(fireEvent);
         fireInstance.start();
+        tinnitusInstance = FMODUnity.RuntimeManager.CreateInstance(tinnitusEvent);
+        tinnitusInstance.start();
     }
 
     void Start()
     {
         backgroundEmitter.Play();
+        tinMaxTime = TimeManager.Instance.GetMaxTime() * 0.8f;
     }
 
     void Update()
     {
         SetBackgroundVolume(TimeManager.Instance.GetTimeUsedRatio());
+        SetTinnitusVolume();
     }
     
     public void FireOn()
@@ -52,11 +59,18 @@ public class AudioManager : MonoBehaviour
     public void StopBackground()
     {
         backgroundEmitter.Stop();
+        tinnitusInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void SetBackgroundVolume(float val)
     {
         float vol = initialBackgroundVolume + val*(1 - initialBackgroundVolume);
         backgroundEmitter.SetParameter("chaosVolume", vol);
+    }
+
+    public void SetTinnitusVolume()
+    {
+        float val = Mathf.Clamp01(Time.time / tinMaxTime);
+        tinnitusInstance.setParameterByName("tinVolume", val);
     }
 }
