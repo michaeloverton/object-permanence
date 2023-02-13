@@ -39,7 +39,7 @@ public class ScreenEventListener : MonoBehaviour
                 screenTimer = 0;
                 screenIsActive = false;
                 Manager.Instance.FreezePlayer(false);
-                AudioManager.Instance.FireOff();
+                // AudioManager.Instance.FireOff();
             }
         }
     }

@@ -16,6 +16,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] bool playScreenEvents = true;
     [SerializeField] float screenOneTime = 2f;
     [SerializeField] float screenTwoTime = 10f;
+    [SerializeField] float screenThreeTime = 20f;
     
     // Timer vars.
     float totalTimer = 0f;
@@ -67,14 +68,21 @@ public class TimeManager : MonoBehaviour
                 if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
                 screenEventIndex++;
                 Manager.Instance.FreezePlayer(true);
-                AudioManager.Instance.FireOn();
+                // AudioManager.Instance.FireOn();
             }
             if(totalTimer > screenTwoTime && screenEventIndex == 1)
             {
                 if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
                 screenEventIndex++;
                 Manager.Instance.FreezePlayer(true);
-                AudioManager.Instance.FireOn();
+                // AudioManager.Instance.FireOn();
+            }
+            if(totalTimer > screenThreeTime && screenEventIndex == 2)
+            {
+                if(OnScreenEvent != null) OnScreenEvent(screenEventIndex);
+                screenEventIndex++;
+                Manager.Instance.FreezePlayer(true);
+                // AudioManager.Instance.FireOn();
             }
         }
     }

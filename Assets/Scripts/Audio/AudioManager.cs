@@ -6,8 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    [SerializeField] FMODUnity.EventReference fireEvent;
-    FMOD.Studio.EventInstance fireInstance;
+    // [SerializeField] FMODUnity.EventReference fireEvent;
+    // FMOD.Studio.EventInstance fireInstance;
     [SerializeField] FMODUnity.EventReference backgroundEvent;
     FMOD.Studio.EventInstance backgroundInstance;
     [SerializeField] FMODUnity.StudioEventEmitter backgroundEmitter;
@@ -25,8 +25,8 @@ public class AudioManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        fireInstance = FMODUnity.RuntimeManager.CreateInstance(fireEvent);
-        fireInstance.start();
+        // fireInstance = FMODUnity.RuntimeManager.CreateInstance(fireEvent);
+        // fireInstance.start();
     }
 
     void Start()
@@ -39,15 +39,20 @@ public class AudioManager : MonoBehaviour
         SetBackgroundVolume(TimeManager.Instance.GetTimeUsedRatio());
     }
     
-    public void FireOn()
-    {
-        Debug.Log("FIRE ON");
-        fireInstance.setParameterByName("fireVolume", 1);
-    }
+    // public void FireOn()
+    // {
+    //     Debug.Log("FIRE ON");
+    //     fireInstance.setParameterByName("fireVolume", 1);
+    // }
 
-    public void FireOff()
+    // public void FireOff()
+    // {
+    //     fireInstance.setParameterByName("fireVolume", 0);
+    // }
+
+    public void StopBackground()
     {
-        fireInstance.setParameterByName("fireVolume", 0);
+        backgroundEmitter.Stop();
     }
 
     public void SetBackgroundVolume(float val)

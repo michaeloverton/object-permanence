@@ -7,10 +7,12 @@ public class IntroCardController : MonoBehaviour
     [SerializeField] float startMusicTime = 1f;
     float currentTime = 0f;
     bool playingMusic = false;
+    [SerializeField] FMODUnity.StudioEventEmitter fireSound;
 
     void Start()
     {
-        AudioManager.Instance.FireOn();
+        // AudioManager.Instance.FireOn();
+        // Manager.Instance.FreezePlayer(true);
     }
 
     // Update is called once per frame
@@ -22,7 +24,8 @@ public class IntroCardController : MonoBehaviour
             if(currentTime > startMusicTime)
             {
                 Manager.Instance.FreezePlayer(false);
-                AudioManager.Instance.FireOff();
+                // AudioManager.Instance.FireOff();
+                fireSound.Stop();
 
                 if(!MusicManager.Instance.IsPlaying())
                 {

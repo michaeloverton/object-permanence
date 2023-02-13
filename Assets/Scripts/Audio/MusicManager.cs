@@ -35,6 +35,12 @@ public class MusicManager : MonoBehaviour
         }
     }
 
+    public void StopMusic()
+    {
+        musicEmitter.Stop();
+        playMusic = false;
+    }
+
     public bool IsPlaying()
     {
         return musicEmitter.IsPlaying();

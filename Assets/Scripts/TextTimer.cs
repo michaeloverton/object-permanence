@@ -21,6 +21,7 @@ public class TextTimer : MonoBehaviour
     void Update()
     {
         currentTime -= Time.deltaTime;
+        if(currentTime < 0) currentTime = 0;
         timerText.SetText(currentTime.ToString("N3"));
     }
 }
