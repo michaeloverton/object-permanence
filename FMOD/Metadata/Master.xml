@@ -17,8 +17,6 @@
 	<object class="MixerBusEffectChain" id="{9dbfc334-e5a7-4803-8564-03a185d5b453}">
 		<relationship name="effects">
 			<destination>{2691ac6a-bffd-455f-ba60-b7ec477d80da}</destination>
-			<destination>{a307f53d-751d-4035-88dd-78c6853c00cd}</destination>
-			<destination>{b2664396-a5ca-413c-989a-8d2519641abe}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{79b80960-5394-4404-8a1c-d979a1e16f76}">
@@ -27,42 +25,4 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{2691ac6a-bffd-455f-ba60-b7ec477d80da}" />
-	<object class="MultibandEqEffect" id="{a307f53d-751d-4035-88dd-78c6853c00cd}">
-		<property name="filterTypeA">
-			<value>2</value>
-		</property>
-		<property name="frequencyA">
-			<value>22000</value>
-		</property>
-		<property name="qualityA">
-			<value>0.539999962</value>
-		</property>
-		<relationship name="automators">
-			<destination>{3a4fc3cd-228c-4166-a2d0-cc2795c47dd3}</destination>
-		</relationship>
-	</object>
-	<object class="ChorusEffect" id="{b2664396-a5ca-413c-989a-8d2519641abe}">
-		<property name="rate">
-			<value>0.159999996</value>
-		</property>
-		<property name="depth">
-			<value>67</value>
-		</property>
-		<property name="mix">
-			<value>0</value>
-		</property>
-		<relationship name="automators">
-			<destination>{68109427-1c92-464f-80c9-ba62d60e74f6}</destination>
-		</relationship>
-	</object>
-	<object class="Automator" id="{3a4fc3cd-228c-4166-a2d0-cc2795c47dd3}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>frequencyA</value>
-		</property>
-	</object>
-	<object class="Automator" id="{68109427-1c92-464f-80c9-ba62d60e74f6}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>mix</value>
-		</property>
-	</object>
 </objects>

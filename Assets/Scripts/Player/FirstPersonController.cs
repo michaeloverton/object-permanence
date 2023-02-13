@@ -62,8 +62,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             PauseManager.Instance.OnPausePressed += onPausePressed;
             PauseManager.Instance.OnSensitivityChanged += onSensitivityChanged;
+            Manager.Instance.OnFreezePlayer += onFreezePlayer;
 
             m_MouseLook.SetCursorLock(true);
+            frozen = true;
         }
 
         private void onPausePressed(bool val)

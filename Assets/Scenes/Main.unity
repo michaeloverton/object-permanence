@@ -3692,7 +3692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7721444fc92faca4fbf3469fbe8824fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playMusic: 0
+  playMusic: 1
 --- !u!114 &540483042
 MonoBehaviour:
   m_ObjectHideFlags: 0
