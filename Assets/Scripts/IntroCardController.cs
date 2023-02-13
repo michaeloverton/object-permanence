@@ -5,35 +5,20 @@ using UnityEngine;
 public class IntroCardController : MonoBehaviour
 {
     [SerializeField] float startMusicTime = 1f;
-    float currentTime = 0f;
-    bool playingMusic = false;
-    [SerializeField] FMODUnity.StudioEventEmitter fireSound;
 
     void Start()
     {
-        // AudioManager.Instance.FireOn();
-        // Manager.Instance.FreezePlayer(true);
+        StartCoroutine(ShowTitle());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator ShowTitle()
     {
-        if(!playingMusic)
-        {
-            currentTime += Time.deltaTime;
-            if(currentTime > startMusicTime)
-            {
-                Manager.Instance.FreezePlayer(false);
-                // AudioManager.Instance.FireOff();
-                fireSound.Stop();
+        AudioManager.Instance.FireOn();
 
-                if(!MusicManager.Instance.IsPlaying())
-                {
-                    MusicManager.Instance.PlayMusic();
-                    playingMusic = true;
-                } 
-            }
-        }
-        
+        yield return new WaitForSeconds(startMusicTime);
+
+        Manager.Instance.FreezePlayer(false);
+        AudioManager.Instance.FireOff();
+        if(!MusicManager.Instance.IsPlaying())  MusicManager.Instance.PlayMusic();
     }
 }

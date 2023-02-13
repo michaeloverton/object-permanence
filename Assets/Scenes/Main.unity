@@ -2139,7 +2139,6 @@ RectTransform:
   - {fileID: 2039385375}
   - {fileID: 1288271069}
   - {fileID: 178289169}
-  - {fileID: 1464199088}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2181,7 +2180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMusicTime: 2.25
-  fireSound: {fileID: 1464199089}
 --- !u!1 &319255627
 GameObject:
   m_ObjectHideFlags: 0
@@ -6595,6 +6593,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c10f2315cd0298469e2e8211d71af11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireEvent:
+    Guid:
+      Data1: -217801253
+      Data2: 1160313442
+      Data3: -119818589
+      Data4: -70019871
+    Path: event:/Environment/fire
   backgroundEvent:
     Guid:
       Data1: 755365974
@@ -8320,11 +8325,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playScreenEvents: 1
-  screenOneTime: 15
-  screenTwoTime: 30
-  screenThreeTime: 55
+  screenOneTime: 7
+  screenTwoTime: 12
+  screenThreeTime: 20
   tickRate: 0.13
-  maxTime: 60
+  maxTime: 25
   endScreen: {fileID: 2093042977}
   endScreenTime: 3.5
 --- !u!4 &1149763983
@@ -10895,73 +10900,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449264396}
   m_CullTransparentMesh: 1
---- !u!1 &1464199087
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1464199088}
-  - component: {fileID: 1464199089}
-  m_Layer: 5
-  m_Name: Fire
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1464199088
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464199087}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 300810909}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1464199089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464199087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -217801253
-      Data2: 1160313442
-      Data3: -119818589
-      Data4: -70019871
-    Path: event:/Environment/fire
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 0
-  TriggerOnce: 0
-  Preload: 1
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1546703116
 GameObject:
   m_ObjectHideFlags: 0
@@ -25235,7 +25173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5999289949583206903, guid: 50698789b51bcc44390ccd8a3eda6090, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.72
+      value: 5.75
       objectReference: {fileID: 0}
     - target: {fileID: 5999289949583206903, guid: 50698789b51bcc44390ccd8a3eda6090, type: 3}
       propertyPath: m_LocalPosition.y

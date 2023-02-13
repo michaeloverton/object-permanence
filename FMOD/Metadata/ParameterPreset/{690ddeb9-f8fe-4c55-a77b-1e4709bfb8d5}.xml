@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{690ddeb9-f8fe-4c55-a77b-1e4709bfb8d5}">
+		<property name="name">
+			<value>tinVolume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{161f619b-b7c6-4bf6-88b4-10d8e32706ba}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8e5a5ae5-539e-4f6f-a13a-b63b9310cf16}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8e5a5ae5-539e-4f6f-a13a-b63b9310cf16}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
