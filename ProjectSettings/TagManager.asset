@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground_Water
+  - Sword
+  - FireHat
+  - Shield
   layers:
   - Default
   - TransparentFX

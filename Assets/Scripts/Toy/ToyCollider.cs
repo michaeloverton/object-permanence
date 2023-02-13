@@ -47,7 +47,7 @@ public class ToyCollider : MonoBehaviour
 
             if(Input.GetKey(KeyCode.F))
             {
-                toyObject.GetComponent<ToyEnabler>().Enable();
+                toyObject.GetComponent<ToyEnabler>().Enable(toyObject.name);
             }
 
             elapsedTime += Time.deltaTime;
