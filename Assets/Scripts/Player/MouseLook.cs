@@ -97,8 +97,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_cursorIsLocked = false;
             }
-            else if(Input.GetMouseButtonUp(0))
+            else if(Input.GetMouseButtonUp(0) && !PauseManager.Instance.GetPaused())
             {
+                Debug.Log("LOCKING CURSOR");
                 m_cursorIsLocked = true;
             }
 
