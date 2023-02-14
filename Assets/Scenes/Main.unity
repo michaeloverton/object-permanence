@@ -8463,9 +8463,9 @@ MonoBehaviour:
   playScreenEvents: 1
   screenOneTime: 7
   screenTwoTime: 12
-  screenThreeTime: 20
+  screenThreeTime: 25
   tickRate: 0.13
-  maxTime: 25
+  maxTime: 30
   endScreen: {fileID: 2093042977}
   endScreenTime: 3.5
 --- !u!4 &1149763983

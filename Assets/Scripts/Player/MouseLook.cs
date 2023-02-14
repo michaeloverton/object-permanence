@@ -96,6 +96,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if(Input.GetKeyUp(KeyCode.Escape))
             {
                 m_cursorIsLocked = false;
+                Debug.Log("UNLOCKING CURSOR");
             }
             else if(Input.GetMouseButtonUp(0) && !PauseManager.Instance.GetPaused())
             {
