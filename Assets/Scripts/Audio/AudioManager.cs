@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour
 
         fireInstance = FMODUnity.RuntimeManager.CreateInstance(fireEvent);
         fireInstance.start();
+        tinMaxTime = TimeManager.Instance.GetMaxTime() * 0.8f;
         tinnitusInstance = FMODUnity.RuntimeManager.CreateInstance(tinnitusEvent);
         tinnitusInstance.start();
     }
@@ -37,7 +38,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         backgroundEmitter.Play();
-        tinMaxTime = TimeManager.Instance.GetMaxTime() * 0.8f;
     }
 
     void Update()

@@ -17,7 +17,7 @@ public class TickMover : MonoBehaviour
 
     void Update()
     {
-        currentProbability = maxProbability * Mathf.Pow(TimeManager.Instance.GetTimeUsedRatio(), 2);
+        currentProbability = maxProbability * Mathf.Pow(TimeManager.Instance.GetTimeUsedRatio(), 3);
     }
 
     public float GetProbability()

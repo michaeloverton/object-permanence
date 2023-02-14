@@ -28,6 +28,7 @@ public class TimeManager : MonoBehaviour
     float timeUsedRatio;
     [SerializeField] GameObject endScreen;
     [SerializeField] float endScreenTime = 3.0f;
+    bool stopped = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -44,6 +45,8 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(stopped) return;
+
         totalTimer += Time.deltaTime;
         tickTimer += Time.deltaTime;
 
@@ -105,5 +108,10 @@ public class TimeManager : MonoBehaviour
 
         yield return new WaitForSeconds(endScreenTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Stop()
+    {
+        stopped = true;
     }
 }

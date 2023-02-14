@@ -17,6 +17,7 @@ public class IntroCardController : MonoBehaviour
 
         yield return new WaitForSeconds(startMusicTime);
 
+        gameObject.SetActive(false);
         Manager.Instance.FreezePlayer(false);
         AudioManager.Instance.FireOff();
         if(!MusicManager.Instance.IsPlaying())  MusicManager.Instance.PlayMusic();

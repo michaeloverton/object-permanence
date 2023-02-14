@@ -29,14 +29,16 @@ public class PositionManager : MonoBehaviour
     void ShuffleObjects(float t)
     {
         if(!on) return;
+        bool playerIsMoving = Manager.Instance.PlayerIsMoving();
+        if(!playerIsMoving) return;
 
         // Determine which objects to move.
         List<TickMover> objectsToMove = new List<TickMover>();
         List<Vector3> availablePositions = new List<Vector3>();
         foreach(TickMover tm in objects)
         {
-            // if(Random.Range(0f, 1.0f) < tm.GetProbability() && playerIsMoving)
             if(Random.Range(0f, 1.0f) < tm.GetProbability())
+            // if(Random.Range(0f, 1.0f) < tm.GetProbability())
             {
                 objectsToMove.Add(tm);
                 availablePositions.Add(moverToPosition[tm]);

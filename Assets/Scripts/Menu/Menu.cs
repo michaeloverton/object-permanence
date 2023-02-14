@@ -54,6 +54,7 @@ public class Menu : MonoBehaviour
         blackEndPanel.SetActive(true);
         MusicManager.Instance.StopMusic();
         AudioManager.Instance.StopBackground();
+        TimeManager.Instance.Stop();
 
         yield return new WaitForSeconds(blackEndTime);
 
